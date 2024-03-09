@@ -1,0 +1,16 @@
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  color: rgb(26 222 182);
+  font-weight: 900;
+}

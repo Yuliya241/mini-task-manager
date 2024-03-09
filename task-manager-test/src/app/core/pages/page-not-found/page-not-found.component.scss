@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text {
+  color: var(--grey-color);
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 22.13px;
+  margin: 0 10px 20px 0;
+}
+
+.not-found {
+  width: 250px;
+  height: 250px;
+}
+
+.button.mdc-button {
+  background-color: var(--button-color);
+  color: var(--icon-color);
+}

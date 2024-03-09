@@ -1,4 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--body-color);
+}
+
+:root {
+  --button-color: rgb(45, 167, 180);
+  --add-button-color: rgb(214, 105, 23);
+  --text-color: rgba(255, 255, 255, 1);
+  --title-color: rgba(79, 79, 79, 1);
+  --grey-color: rgba(130, 130, 130, 1);
+  --black-color: rgba(0, 0, 0, 1);
+  --card-color: rgba(242, 242, 242, 1);
+  --header-color: rgba(132 118 161);
+  --body-color: rgb(206, 203, 223);
+  --icon-color: rgba(254, 254, 254, 1);
+  --form-button-color: rgba(119 86 171);
+
+  .dark {
+    --form-button-color: rgba(94 7 181);
+    --header-color: rgba(72 5 136);
+    --body-color: rgb(41 38 53);
+    --icon-color: rgb(33, 31, 35);
+    --button-color: rgb(208, 242, 246);
+    --grey-color: rgb(215, 214, 216);
+    --black-color: rgba(255, 255, 255, 1);
+    --add-button-color: rgb(212 152 107);
+  }
+}

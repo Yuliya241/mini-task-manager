@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  background-color: var(--header-color);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.buttons-block {
+  display: flex;
+  gap: 5px;
+}
+
+.button.mdc-button {
+  min-width: 55px;
+  padding: 0;
+  background-color: var(--button-color);
+}
+
+.button.mat-mdc-raised-button:not(:disabled) {
+  color: var(--icon-color);
+}
+
+.thema.mat-icon {
+  margin: 0;
+  color: var(--icon-color);
+}
