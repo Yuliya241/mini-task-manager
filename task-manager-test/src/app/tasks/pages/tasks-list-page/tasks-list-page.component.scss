@@ -1,0 +1,46 @@
+.wrapper {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 10px 50px;
+}
+
+.mdc-data-table__table {
+  margin: 0 auto;
+  padding: 50px;
+  min-width: 95% !important;
+}
+
+.button-back.mdc-button {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0 0 6px;
+  background-color: rgba(39, 174, 96, 1);
+  box-shadow: -2px 2px 4px 0px rgba(39, 174, 96, 0.25);
+}
+
+.arrow.mat-icon {
+  margin: 0;
+  color: var(--card-color);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.input {
+  width: 25rem;
+  padding: 6px;
+  margin: 0 0 15px 15px;
+  font-size: 15px;
+  border-radius: 10px;
+  outline: 0;
+  border-color: transparent;
+}
+
+.aa {
+  display: flex;
+}

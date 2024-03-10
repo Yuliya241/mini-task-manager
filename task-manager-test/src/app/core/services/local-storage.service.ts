@@ -37,4 +37,8 @@ export class LocalStorageService {
   getItemUsername() {
     return localStorage.getItem(LocalStorageKeys.USERNAME);
   }
+
+  getTasks() {
+    return localStorage.getItem(LocalStorageKeys.TASKS);
+  }
 }

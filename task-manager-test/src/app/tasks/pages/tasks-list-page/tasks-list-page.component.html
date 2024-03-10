@@ -1,1 +1,41 @@
-<p>tasks-list-page works!</p>
+<div class="wrapper">
+
+  <div class="block">
+    <div class="aa">
+      <button mat-raised-button color="primary" class="button-back" type="button" (click)="back()">
+        <mat-icon class="arrow">arrow_back_ios</mat-icon>
+      </button>
+      <input class="input" matInput (keyup)="applyFilter($event)" placeholder="Filter...">
+    </div>
+
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort
+      (matSortChange)="announceSortChange($event)">
+
+      <ng-container matColumnDef="nameTask">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by nameTask"> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.nameTask}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by status"> Status </th>
+        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="performer">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by performer"> Performer
+        </th>
+        <td mat-cell *matCellDef="let element"> {{element.performer}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="deadline">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by deadline"> Deadline </th>
+        <td mat-cell *matCellDef="let element"> {{element.deadline}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+</div>

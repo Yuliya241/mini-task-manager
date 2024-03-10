@@ -1,1 +1,70 @@
-<p class="wrapper">main-page works!</p>
+<main class="wrapper">
+  <div class="group-list">
+    <form class="form-container" [formGroup]="formCreateGroup">
+      <div class="form-wrapper">
+        <h2 class="title">Add new task</h2>
+        <mat-form-field>
+          <mat-label>Name:</mat-label>
+          <input matInput formControlName="nameTask" placeholder="Add task..." required>
+          <mat-error *ngIf="formCreateGroup.get('nameTask')?.hasError('required')">
+            Please enter a name
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Deadline:</mat-label>
+          <input matInput formControlName="deadline" required [matDatepicker]="picker">
+          <mat-hint>mm/dd/yy</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="formCreateGroup.get('deadline')?.hasError('required')">
+            Please choose a date
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Status:</mat-label>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let status of statuses" [value]="status.value">
+              {{status.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="formCreateGroup.get('status')?.hasError('required')">
+            Please select status
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Priority:</mat-label>
+          <mat-select formControlName="priority">
+            <mat-option *ngFor="let priority of priorities" [value]="priority.value">
+              {{priority.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="formCreateGroup.get('priority')?.hasError('required')">
+            Please select priority
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Performers:</mat-label>
+          <mat-select formControlName="performer">
+            <mat-option *ngFor="let performer of performers" [value]="performer.value">
+              {{performer.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="formCreateGroup.get('performers')?.hasError('required')">
+            Please select performers
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="button" matTooltip="Create a new task..." type="submit"
+          (click)="add()">
+          <mat-icon class="add-icon">add icon</mat-icon></button>
+      </div>
+    </form>
+  </div>
+  <div class="task-list">
+    <p class="task-name">My tasks:</p>
+    <div class="card-body">
+      <div class="list-group" *ngFor="let item of items">
+        <div class="item" [routerLink]="[item.id]">{{item.nameTask}}</div>
+      </div>
+    </div>
+  </div>
+</main>

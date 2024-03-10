@@ -1,0 +1,76 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  background-color: var(--card-color);
+  border-radius: 5px;
+  padding: 20px 40px;
+}
+
+.form-wrapper {
+  flex-direction: column;
+  display: flex;
+  row-gap: 10px;
+}
+
+.mat-mdc-form-field {
+  width: 35rem;
+}
+
+.title {
+  color: rgb(0, 0, 0);
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 21.09px;
+  margin: 0 auto;
+}
+
+.button-back.mdc-button {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0 0 6px;
+  background-color: rgba(39, 174, 96, 1);
+  box-shadow: -2px 2px 4px 0px rgba(39, 174, 96, 0.25);
+}
+
+.arrow.mat-icon {
+  margin: 0;
+  color: var(--card-color);
+}
+
+.wrapper {
+  padding: 40px 0 100px 0;
+  margin: 0 auto;
+}
+
+.block {
+  display: flex;
+  max-width: 1440px;
+  padding: 10px 50px;
+  justify-content: center;
+}
+
+.button.mdc-button {
+  background-color: var(--form-button-color);
+  width: 50px;
+  height: 30px;
+  color: var(--text-color);
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14.06px;
+  align-self: flex-end;
+  margin: 10px 0;
+}
+
+.buttons-block {
+  display: flex;
+  align-self: flex-end;
+  gap: 10px;
+}
+
+.input[disabled] {
+  background-color: rgb(203, 201, 201);
+}

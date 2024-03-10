@@ -1,11 +1,11 @@
 <header class="wrapper">
   <app-logo></app-logo>
+  <button class="button-tasks" (click)="goToTasks()">All tasks</button>
   <div class="buttons-block">
     <app-login></app-login>
     <button class="button" mat-raised-button color="primary" type="button" (click)="switchTheme()">
       <mat-icon class="thema" *ngIf="isDark()">dark_mode</mat-icon>
       <mat-icon class="thema" *ngIf="!isDark()">light_mode</mat-icon>
     </button>
-    <app-create-task-button></app-create-task-button>
   </div>
 </header>

@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, effect, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 import { LocalStorageKeys } from '../../enums/enums';
 import { LocalStorageService } from '../../services/local-storage.service';
-import { CreateTaskButtonComponent } from '../create-task-button/create-task-button.component';
 import { LoginComponent } from '../login/login.component';
 import { LogoComponent } from '../logo/logo.component';
 
@@ -17,7 +17,6 @@ import { LogoComponent } from '../logo/logo.component';
   imports: [
     LoginComponent,
     LogoComponent,
-    CreateTaskButtonComponent,
     CommonModule,
     MatButtonModule,
     MatIconModule,
@@ -32,6 +31,7 @@ export class HeaderComponent {
   );
 
   constructor(
+    private router: Router,
     private authService: AuthService,
     private localStorage: LocalStorageService,
   ) {
@@ -49,5 +49,9 @@ export class HeaderComponent {
 
   public logoutForm(): void {
     this.authService.logout();
+  }
+
+  goToTasks(): void {
+    this.router.navigate(['allTasks']);
   }
 }

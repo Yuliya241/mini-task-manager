@@ -1,6 +1,89 @@
+.group-list {
+  width: 720px;
+  padding: 20px 50px;
+}
+
+.task-list {
+  width: 720px;
+  border-left: 5px solid rgb(156, 154, 170);
+  padding: 20px 50px;
+}
+
 .wrapper {
   max-width: 1440px;
   display: flex;
   margin: 0 auto;
-  padding: 0 50px;
+}
+
+.button.mdc-button {
+  padding: 0;
+  margin: 15px 0;
+  background-color: var(--add-button-color);
+  width: 50px;
+  height: 30px;
+  align-self: flex-end;
+}
+
+.add-icon.mat-icon {
+  margin: 0;
+  color: var(--icon-color);
+  font-size: 1.7rem;
+  height: 1.7rem;
+  width: 1.7rem;
+}
+
+.item {
+  padding: 10px;
+  border: 1px groove rgb(97, 27, 231);
+  color: var(--black-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  background-color: var(--card-color);
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 20px 0 0 0;
+}
+
+.form-wrapper {
+  flex-direction: column;
+  display: flex;
+  row-gap: 10px;
+}
+
+.mat-mdc-form-field {
+  width: 350px;
+}
+
+.title {
+  color: rgb(0, 0, 0);
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 21.09px;
+  margin: 0 auto;
+}
+
+.close.mat-icon {
+  margin: 0;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.task-name {
+  color: rgb(26, 143, 30);
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 21.09px;
+  margin: 0 auto;
+  padding-bottom: 10px;
 }
