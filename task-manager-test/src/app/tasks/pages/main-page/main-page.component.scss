@@ -24,6 +24,10 @@
   align-self: flex-end;
 }
 
+.button.mdc-button[disabled] {
+  background-color: rgb(162, 158, 155)
+}
+
 .add-icon.mat-icon {
   margin: 0;
   color: var(--icon-color);

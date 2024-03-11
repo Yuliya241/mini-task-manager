@@ -54,7 +54,7 @@
           </mat-error>
         </mat-form-field>
         <button mat-raised-button color="primary" class="button" matTooltip="Create a new task..." type="submit"
-          (click)="add()">
+          (click)="add()" [disabled]="!formCreateGroup.valid">
           <mat-icon class="add-icon">add icon</mat-icon></button>
       </div>
     </form>
