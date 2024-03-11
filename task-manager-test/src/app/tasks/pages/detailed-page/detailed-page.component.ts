@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 import { LocalStorageKeys } from 'src/app/core/enums/enums';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
-import { Item, Select } from '../../models';
+import { Item } from '../../models';
+import { performersVariable, prioritiesVariable, statusesVariable } from '../../variables';
 
 @Component({
   selector: 'app-detailed-page',
@@ -18,11 +19,19 @@ export class DetailedPageComponent implements OnInit {
 
   private router = inject(Router);
 
+  private fb = inject(FormBuilder);
+
   @Input() id = '';
 
   item?: Item;
 
   isEditPressed = false;
+
+  statuses = statusesVariable;
+
+  priorities = prioritiesVariable;
+
+  performers = performersVariable;
 
   ngOnInit(): void {
     this.item = JSON.parse(this.localStorage.getTasks() || '')
@@ -34,28 +43,6 @@ export class DetailedPageComponent implements OnInit {
     this.returnValues();
     this.formCreateGroup.disable();
   }
-
-  statuses: Select[] = [
-    { value: 'To do', viewValue: 'To do' },
-    { value: 'In progress', viewValue: 'In progress' },
-    { value: 'Completed', viewValue: 'Completed' },
-  ];
-
-  priorities: Select[] = [
-    { value: 'Low', viewValue: 'Low' },
-    { value: 'Mediu', viewValue: 'Medium' },
-    { value: 'High', viewValue: 'High' },
-  ];
-
-  performers: Select[] = [
-    { value: 'Anna', viewValue: 'Anna' },
-    { value: 'Pete', viewValue: 'Peter' },
-    { value: 'Sam', viewValue: 'Sam' },
-    { value: 'Tom', viewValue: 'Tom' },
-    { value: 'Paul', viewValue: 'Paul' },
-  ];
-
-  private fb = inject(FormBuilder);
 
   formCreateGroup = this.fb.group({
     nameTask: ['', { nonNullable: true, validators: [Validators.required] }],

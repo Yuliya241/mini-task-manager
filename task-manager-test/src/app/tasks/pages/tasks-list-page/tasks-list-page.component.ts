@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
 import { Item } from '../../models';
+import { displayedColumnsVariable } from '../../variables';
 
 @Component({
   selector: 'app-tasks-list-page',
@@ -14,6 +15,8 @@ import { Item } from '../../models';
   styleUrls: ['./tasks-list-page.component.scss'],
 })
 export class TasksListPageComponent implements OnInit, AfterViewInit {
+  @ViewChild(MatSort) sort?: MatSort;
+
   private localStorage = inject(LocalStorageService);
 
   private router = inject(Router);
@@ -24,7 +27,7 @@ export class TasksListPageComponent implements OnInit, AfterViewInit {
 
   dataSource = new MatTableDataSource();
 
-  @ViewChild(MatSort) sort?: MatSort;
+  displayedColumns = displayedColumnsVariable;
 
   ngAfterViewInit() {
     this.dataSource = new MatTableDataSource(JSON.parse(this.localStorage.getTasks() || ''));
@@ -41,8 +44,6 @@ export class TasksListPageComponent implements OnInit, AfterViewInit {
   public back(): void {
     this.router.navigateByUrl('/main');
   }
-
-  displayedColumns: string[] = ['nameTask', 'status', 'performer', 'deadline'];
 
   public announceSortChange(sortState: Sort): void {
     if (sortState.direction) {

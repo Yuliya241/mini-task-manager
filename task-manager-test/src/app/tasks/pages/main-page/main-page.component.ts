@@ -4,7 +4,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { LocalStorageKeys } from 'src/app/core/enums/enums';
 import { LocalStorageService } from 'src/app/core/services/local-storage.service';
 
-import { Item, Select } from '../../models';
+import { Item } from '../../models';
+import { performersVariable, prioritiesVariable, statusesVariable } from '../../variables';
 
 @Component({
   selector: 'app-main-page',
@@ -13,31 +14,17 @@ import { Item, Select } from '../../models';
 })
 
 export class MainPageComponent implements OnInit {
-  items?: Item[] = [];
-
-  statuses: Select[] = [
-    { value: 'To do', viewValue: 'To do' },
-    { value: 'In progress', viewValue: 'In progress' },
-    { value: 'Completed', viewValue: 'Completed' },
-  ];
-
-  priorities: Select[] = [
-    { value: 'Low', viewValue: 'Low' },
-    { value: 'Mediu', viewValue: 'Medium' },
-    { value: 'High', viewValue: 'High' },
-  ];
-
-  performers: Select[] = [
-    { value: 'Anna', viewValue: 'Anna' },
-    { value: 'Pete', viewValue: 'Peter' },
-    { value: 'Sam', viewValue: 'Sam' },
-    { value: 'Tom', viewValue: 'Tom' },
-    { value: 'Paul', viewValue: 'Paul' },
-  ];
-
   private fb = inject(FormBuilder);
 
   private localStorage = inject(LocalStorageService);
+
+  items?: Item[] = [];
+
+  statuses = statusesVariable;
+
+  priorities = prioritiesVariable;
+
+  performers = performersVariable;
 
   isSubmitted = false;
 
