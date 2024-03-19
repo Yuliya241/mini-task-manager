@@ -53,8 +53,11 @@ export class TasksListPageComponent implements OnInit, AfterViewInit {
     }
   }
 
-  public applyFilter(event: any): void {
-    const filterValue = event.target?.value.trim().toLowerCase();
-    this.dataSource.filter = filterValue;
+  public applyFilter(event: Event): void {
+    const targetElement: EventTarget | null = event.target;
+    if (targetElement && targetElement instanceof HTMLInputElement) {
+      const filterValue = targetElement.value.trim().toLowerCase();
+      this.dataSource.filter = filterValue;
+    }
   }
 }
